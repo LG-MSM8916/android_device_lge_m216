@@ -20,4 +20,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 $(call inherit-product, device/lge/m216/full_m216.mk)
 
+# Inherit some proprietary XOSP stuff.
+$(call inherit-product, vendor/xosp/config/xosp.mk)
+
 PRODUCT_NAME := xosp_m216
