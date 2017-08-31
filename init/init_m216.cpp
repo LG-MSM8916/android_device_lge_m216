@@ -139,6 +139,8 @@ void vendor_load_properties()
         //TODO
     }
 
-    device = property_get("ro.product.device");
+    property_override("ro.build.description", "lineage_m216 7.1 MRA58K 1630620076e17 release-keys");
+    property_override("ro.build.fingerprint", "lge/lineage_216/m216:7.1/MRA58K/1630620076e17:user/release-keys");
+
     INFO("Found sku id: %s setting build properties for %s device\n", sku.c_str(), device.c_str());
 }
