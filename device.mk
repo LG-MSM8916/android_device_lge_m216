@@ -49,10 +49,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf
 
-# Lights
-PRODUCT_PACKAGES += \
-    lights.msm8916
-
 # Media
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml
@@ -69,8 +65,3 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     fstab.qcom \
     init.target.rc
-
-# Camera
-PRODUCT_PACKAGES += \
-    libmm-qcamera \
-    camera.msm8916
