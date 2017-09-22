@@ -29,10 +29,11 @@
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
 
+#include <android-base/properties.h>
 #include "vendor_init.h"
 #include "property_service.h"
-#include "log.h"
-#include "util.h"
+
+using android::base::GetProperty;
 
 static bool isDS = false;
 static bool havenfc = true;
@@ -68,7 +69,7 @@ static void import_cmdline(const std::string& key,
 void target_ram() {
     //std::string ram;
 
-    //ram = property_get("ro.boot.ram"); //ro.boot.ram??
+    //ram = GetProperty("ro.boot.ram", ""); //ro.boot.ram??
     //if (isDS)
     //    property_set("ro.boot.ram", "2GB");
     
@@ -88,22 +89,14 @@ void num_sims() {
 void vendor_load_properties()
 {
     std::string carrier;
-    std::string devicename;
-
-    //std::string platform;
     std::string device_boot;
     std::string sku;
     std::string radio;
     std::string device;
-    
-    //platform = property_get("ro.board.platform");
-    //if (platform != ANDROID_TARGET)
-    //    return;
 
     import_kernel_cmdline(0, import_cmdline);
     
-    device_boot = property_get("ro.boot.device");
-    //property_set("ro.hw.device", device_boot.c_str());
+    device_boot = GetProperty("ro.boot.device", "");
 
     property_override("ro.product.device", "m216");
 
@@ -115,11 +108,9 @@ void vendor_load_properties()
         sku = "LG-K420n";
     }
     
-    carrier = property_get("ro.boot.carrier");
-    //property_set("ro.carrier", carrier.c_str());
+    carrier = GetProperty("ro.boot.carrier", "");
 
-    radio = property_get("ro.boot.radio");
-    //property_set("ro.hw.radio", radio.c_str());
+    radio = GetProperty("ro.boot.radio", "");
 
     /* Common for all models */
     property_override("ro.build.product", "m216");
@@ -139,6 +130,4 @@ void vendor_load_properties()
         //TODO
     }
 
-    device = property_get("ro.product.device");
-    INFO("Found sku id: %s setting build properties for %s device\n", sku.c_str(), device.c_str());
 }
