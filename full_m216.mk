@@ -27,8 +27,8 @@ $(call inherit-product-if-exists, vendor/lge/m216/m216-vendor.mk)
 $(call inherit-product, device/lge/msm8916-common/msm8916.mk)
 
 # Time Zone data for recovery
-PRODUCT_COPY_FILES += \
-    bionic/libc/zoneinfo/tzdata:root/system/usr/share/zoneinfo/tzdata
+#PRODUCT_COPY_FILES += \
+#    bionic/libc/zoneinfo/tzdata:root/system/usr/share/zoneinfo/tzdata
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += device/lge/m216/overlay

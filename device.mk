@@ -26,9 +26,6 @@ PRODUCT_PACKAGES += \
     nfc_nci.bcm2079x.default \
     Tag
 
-# Stlport
-PRODUCT_PACKAGES += libstlport
-
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
     $(LOCAL_PATH)/configs/libnfc-brcm-20795a20.conf:system/etc/libnfc-brcm-20795a20.conf \
