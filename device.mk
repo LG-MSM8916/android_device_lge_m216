@@ -25,7 +25,7 @@ PRODUCT_PACKAGES += \
     NfcNci \
     nfc_nci.bcm2079x.default \
     Tag \
-    android.hardware.nfc@1.0-impl
+    android.hardware.nfc@1.0-impl-bcm
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
