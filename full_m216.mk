@@ -39,8 +39,7 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 PRODUCT_PROPERTY_OVERRIDES += ro.sf.lcd_density=320
 
 # Boot animation
-TARGET_SCREEN_HEIGHT := 1280
-TARGET_SCREEN_WIDTH := 720
+TARGET_BOOT_ANIMATION_RES := 720
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := m216
