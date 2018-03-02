@@ -36,6 +36,7 @@
 #include "util.h"
 
 using android::base::GetProperty;
+using android::init::property_set;
 
 static bool isDS = false;
 static bool havenfc = true;
