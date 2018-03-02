@@ -26,14 +26,15 @@
  */
 
 #include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <fstream>
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
 
 #include <android-base/properties.h>
 #include "vendor_init.h"
 #include "property_service.h"
-#include "log.h"
-#include "util.h"
 
 using android::base::GetProperty;
 using android::init::property_set;
@@ -97,7 +98,7 @@ void vendor_load_properties()
     std::string radio;
     std::string device;
 
-    import_kernel_cmdline(0, import_cmdline);
+    //import_kernel_cmdline(0, import_cmdline);
     
     device_boot = GetProperty("ro.boot.device", "");
 
