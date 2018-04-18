@@ -26,14 +26,13 @@
  */
 
 #include <stdlib.h>
+#include <stdio.h>
+#include <android-base/properties.h>
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
 
-#include <android-base/properties.h>
 #include "vendor_init.h"
 #include "property_service.h"
-#include "log.h"
-#include "util.h"
 
 using android::base::GetProperty;
 using android::init::property_set;
@@ -53,7 +52,7 @@ void property_override(char const prop[], char const value[])
         __system_property_add(prop, strlen(prop), value, strlen(value));
 }
 
-static void import_cmdline(const std::string& key,
+/*static void import_cmdline(const std::string& key,
                            const std::string& value, bool for_emulator __attribute__((unused)))
 {
     if (key.empty() || value.empty()) return;
@@ -66,7 +65,7 @@ static void import_cmdline(const std::string& key,
     
     if (key == "lge.nfc" && value == "none")
         havenfc = false;
-}
+}*/
 
 /* Target-Specific Dalvik Heap & HWUI Configuration */
 void target_ram() {
@@ -97,7 +96,7 @@ void vendor_load_properties()
     std::string radio;
     std::string device;
 
-    import_kernel_cmdline(0, import_cmdline);
+    //import_kernel_cmdline(0, import_cmdline);
     
     device_boot = GetProperty("ro.boot.device", "");
 
