@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 LOCAL_PATH := $(call my-dir)
-ifneq ($(filter m216,$(TARGET_DEVICE)),)
+ifneq ($(filter c90,$(TARGET_DEVICE)),)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
